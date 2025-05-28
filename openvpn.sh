@@ -437,6 +437,9 @@ cipher AES-256-CBC
 ignore-unknown-option block-outside-dns
 block-outside-dns
 verb 3
+route 10.0.0.0 255.0.0.0 net_gateway
+route 172.16.0.0 255.240.0.0 net_gateway
+route 192.168.0.0 255.255.0.0 net_gateway
 explicit-exit-notify 1" > /etc/openvpn/server/client-common.txt
 	# Enable and start the OpenVPN service
 	systemctl enable --now openvpn-server@server.service
